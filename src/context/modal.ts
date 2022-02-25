@@ -1,9 +1,8 @@
-import { createContext } from 'react';
+import { createContext, ReactElement } from "react";
 
 const Context = createContext({
-  visible: false,
-  showModal: () => { },
-  hideModal: () => { }
+  showModal: (el: ReactElement) => {},
+  hideModal: () => {},
 });
 
-export default Context
+export default Context;

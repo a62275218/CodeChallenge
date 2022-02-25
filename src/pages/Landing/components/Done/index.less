@@ -1,0 +1,33 @@
+.done-page {
+  width: 450px;
+  height: 400px;
+  background: @primary;
+  display:flex;
+  flex-direction: column;
+  .header{
+    .common-form-header();
+  }
+  .content{
+    flex:1;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding:20px;
+    p{
+      width:78%;
+      text-align: center;
+    }
+    
+  }
+  .bottom{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    .ok-btn{
+      .common-btn();
+      width:80%;
+      padding:10px 0;
+      margin-bottom:20px;
+    }
+  }
+}

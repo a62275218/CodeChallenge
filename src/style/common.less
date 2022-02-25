@@ -1,3 +1,30 @@
-@import './reset.less';
+@import "./reset.less";
 
 @black: #000;
+@error:rgb(206, 47, 47);
+@primary:rgb(79, 180, 226);
+
+.common-btn {
+  border: 1px solid @black;
+  &[disabled] {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
+
+.common-form-header {
+  text-align: center;
+  padding: 40px 0 20px 0;
+  position: relative;
+  font-style: italic;
+  &::after {
+    content: "";
+    height: 2px;
+    width: 40px;
+    display: block;
+    background: red;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+  }
+}

@@ -1,0 +1,40 @@
+.registration-form {
+  width: 350px;
+  height: 400px;
+  background: @primary;
+  .error-msg{
+    font-size:12;
+    color:@error;
+    align-self: start;
+  }
+  .center{
+    margin-top:10px;
+    align-self: center;
+  }
+  .form-header {
+    .common-form-header();
+  }
+  .form-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 10px 0 10px;
+    .form-input {
+      border: 1px solid @black;
+      height:28px;
+      margin:10px 0;
+      padding:0 10px;
+      width:100%;
+    }
+    .highlight{
+      border: 1px solid @error;
+    }
+  }
+
+  .submit-btn {
+    .common-btn();
+    margin-top:10px;
+    height:28px;
+    width:100%;
+  }
+}

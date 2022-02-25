@@ -120,7 +120,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -129,7 +129,17 @@ table {
 }
 
 button {
+  display: block;
   cursor: pointer;
   border: 0px;
   background-color: transparent;
+}
+
+input {
+  background: none;
+  outline: none;
+  border: 0px;
+  &:-webkit-autofill {
+    background-color: transparent;
+  }
 }
