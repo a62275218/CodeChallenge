@@ -38,5 +38,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./public/index.html"
     })
-  ]
+  ],
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'https://l94wc2001h.execute-api.ap-southeast-2.amazonaws.com',
+        pathRewrite: {'^/api' : ''},
+        changeOrigin: true,
+      },
+    }
+  }
 };

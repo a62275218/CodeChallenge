@@ -8,6 +8,7 @@ import React, {
 import Input from "../../../../components/Input";
 import ModalContext from "../../../../context/modal";
 import Done from "../Done";
+import axios from "axios";
 import "./index.less";
 
 export default function Register() {
@@ -43,26 +44,22 @@ export default function Register() {
       }
       setFetchError("");
       setIsFetching(true);
-      fetch(
-        "https://l94wc2001h.execute-api.ap-southeast-2.amazonaws.com/prod/fake-auth",
-        {
-          method: "POST",
-          mode: "cors",
-          body: JSON.stringify({
-            name,
-            email,
-          }),
-        }
-      )
+      axios("/api/prod/fake-auth", {
+        method: "POST",
+        data: {
+          name,
+          email,
+        },
+      })
         .then((res) => {
-          if (res.ok) {
+          if (res.status === 200) {
             showModal(<Done />);
           } else {
             setFetchError(res.statusText);
           }
         })
-        .catch(() => {
-          setFetchError("network error");
+        .catch((err) => {
+          setFetchError(err.response.data?.errorMessage ?? "");
         })
         .finally(() => {
           if (!unmountRef.current) {
